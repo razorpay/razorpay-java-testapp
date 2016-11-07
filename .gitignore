@@ -28,6 +28,6 @@
 
 # IntelliJ
 /out/
-/target/
+target/
 
 config.properties
