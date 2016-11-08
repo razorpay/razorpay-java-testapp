@@ -6,17 +6,17 @@ The sample app is made using [Dropwizard Framework](http://www.dropwizard.io/1.0
 
 # Steps to run sample app:
 
-1. Edit the key inside index.ftl
-2. Add you api_key and api_secret in server.yml file
+- Edit the key inside index.ftl
+- Add you api_key and api_secret in server.yml file:
 ```
 apiKey: your_api_key
 secretKey: your_api_secret
 ```
-3. Build 
+- Build 
 ```
 mvn clean install
 ```
-4. Run 
+- Run 
 ```
 java -jar target/razorpay-java-testapp-1.0-SNAPSHOT.jar server server.yml
 ```
