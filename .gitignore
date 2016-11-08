@@ -29,5 +29,10 @@
 # IntelliJ
 /out/
 target/
+.idea/
 
 config.properties
+*.iml
+.settings
+.project
+.classpath
