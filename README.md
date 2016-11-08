@@ -2,17 +2,27 @@
 
 Sample app for Razorpay Java Integration
 
+The sample app is made using [Dropwizard Framework](http://www.dropwizard.io/1.0.2/docs/).
+
+# Steps to run sample app:
+
+1. Edit the key inside index.ftl
+2. Add you api_key and api_secret in server.yml file
+```
+apiKey: your_api_key
+secretKey: your_api_secret
+```
+3. Build 
+```
+mvn clean install
+```
+4. Run 
+```
+java -jar target/razorpay-java-testapp-1.0-SNAPSHOT.jar server server.yml
+```
+
 # Steps for Integration:
 
 1. Make a checkout form using our Checkout Integration
 2. Accept the `razorpay_payment_id` parameter in the form submission
 3. Run the capture code to capture the payment
-
-If you are re-using this as your final code, please make sure you do the following:
-
-- Edit the key inside index.ftl
-- Create a file called `config.properties` which should contain the following lines:
-```
-api_key=your_api_key
-api_secret=your_api_secret
-```
