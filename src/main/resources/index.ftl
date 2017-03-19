@@ -9,6 +9,7 @@
             src="https://checkout.razorpay.com/v1/checkout.js"
             data-key="rzp_test_1DP5mmOlF5G5ag"
             data-amount=${amount?c}
+            data-order_id=${razorpayOrderId}
             data-name="Daft Punk"
             data-description="Purchase Description"
             data-image="vk.jpg"
