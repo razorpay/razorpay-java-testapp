@@ -21,8 +21,19 @@ public class PaymentResource {
   private RazorpayClient client;
   private int amount = 500;
 
-  public PaymentResource(RazorpayClient client) {
-    this.client = client;
+  private String apiKey;
+  private String secretKey;
+  
+  public PaymentResource(String apiKey, String secretKey) {
+    this.apiKey = apiKey;
+    this.secretKey = secretKey;
+    try {
+      this.client = new RazorpayClient(this.apiKey, this.secretKey);
+    } catch (RazorpayException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    
   }
 
   @GET
@@ -53,7 +64,7 @@ public class PaymentResource {
         options.put("razorpay_payment_id", paymentId);
         options.put("razorpay_order_id", orderId);
         options.put("razorpay_signature", razorpaySignature);
-        boolean isEqual = client.Utility.verifyPaymentSignature(options);
+        boolean isEqual = Utils.verifyPaymentSignature(options, this.secretKey);
 
         if (isEqual) {
           return Response.ok().build();

@@ -25,8 +25,7 @@ public class App extends Application<AppConfiguration> {
 
     System.out.println("API Key " + apiKey + " Secret Key " + secretKey);
 
-    RazorpayClient razorpayClient = new RazorpayClient(apiKey, secretKey);
-    environment.jersey().register(new PaymentResource(razorpayClient));
+    environment.jersey().register(new PaymentResource(apiKey, secretKey));
   }
 
   public static void main(String[] args) throws Exception {
