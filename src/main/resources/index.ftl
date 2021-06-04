@@ -7,18 +7,18 @@ var options = {
     "name": "DJ Tiesto",
     "description": "Tron Legacy",
     "image": "https://s29.postimg.org/r6dj1g85z/daft_punk.jpg",
-    "prefill": [
+    "prefill": {
       "name": "Daft Punk",
       "email": "customer@merchant.com",
       "contact": "9999999999",
-    ],
-    "notes": [
+    },
+    "notes": {
       "address": "Hello World",
       "merchant_order_id": "12312321",
-    ],
-    "theme": [
+    },
+    "theme": {
       "color": "#F37254"
-    ],
+    },
     "order_id": `${razorpayOrderId}`,
 }
 
