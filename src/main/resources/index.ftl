@@ -20,18 +20,13 @@ var options = {
       "color": "#F37254"
     },
     "order_id": `${razorpayOrderId}`,
+    handler: resp => alert(resp.razorpay_payment_id),
 }
 
 /**
  * The entire list of Checkout fields is available at
  * https://docs.razorpay.com/docs/checkout-form#checkout-fields
  */
-options.handler = function (response){
-    document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
-    document.getElementById('razorpay_signature').value = response.razorpay_signature;
-    document.razorpayform.submit();
-};
-
 // Boolean whether to show image inside a white frame. (default: true)
 options.theme.image_padding = false;
 
