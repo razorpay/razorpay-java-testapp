@@ -67,7 +67,7 @@ public class PaymentResource {
         boolean isEqual = Utils.verifyPaymentSignature(options, this.secretKey);
 
         if (isEqual) {
-          return Response.ok().build();
+          return new SuccessView(paymentId, orderId);
         }
       } catch (RazorpayException e) {
         System.out.println("Exception caused because of " + e.getMessage());

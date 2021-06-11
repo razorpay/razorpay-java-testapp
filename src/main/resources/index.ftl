@@ -37,7 +37,7 @@ options.theme.image_padding = false;
 options.handler = function(res) {
     var form = document.getElementById('verify');
     document.getElementById('razorpay_payment_id').value = res.razorpay_payment_id;
-    document.getElementById('razorpay_order_id').value = res.razorpayOrderId;
+    document.getElementById('razorpay_order_id').value = `${razorpayOrderId}`;
     document.getElementById('razorpay_signature').value = res.razorpay_signature;
     form.submit();
 }
