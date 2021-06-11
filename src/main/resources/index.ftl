@@ -1,6 +1,11 @@
 <#-- @ftlvariable name="" type="com.razorpay.PaymentView" -->
 <button id="rzp-button1">Pay with Razorpay</button>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<form action="/payment/charge" method="POST" id="verify">
+    <input id="razorpay_payment_id" name="razorpay_payment_id" />
+    <input id="razorpay_order_id" name="razorpay_order_id" />
+    <input id="razorpay_signature" name="razorpay_signature" />
+</form>
 <script>
 // Checkout details as a json
 var options = {
@@ -20,7 +25,6 @@ var options = {
       "color": "#F37254"
     },
     "order_id": `${razorpayOrderId}`,
-    handler: resp => alert(resp.razorpay_payment_id),
 }
 
 /**
@@ -29,6 +33,14 @@ var options = {
  */
 // Boolean whether to show image inside a white frame. (default: true)
 options.theme.image_padding = false;
+
+options.handler = function(res) {
+    var form = document.getElementById('verify');
+    document.getElementById('razorpay_payment_id').value = res.razorpay_payment_id;
+    document.getElementById('razorpay_order_id').value = res.razorpayOrderId;
+    document.getElementById('razorpay_signature').value = res.razorpay_signature;
+    form.submit();
+}
 
 options.modal = {
     ondismiss: function() {
