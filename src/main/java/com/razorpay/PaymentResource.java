@@ -51,8 +51,8 @@ public class PaymentResource {
   @POST
   @Path("/charge")
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-  @Produces(MediaType.APPLICATION_JSON)
-  public Response charge(MultivaluedMap<String, String> formParams) {
+  @Produces(MediaType.TEXT_HTML)
+  public View charge(MultivaluedMap<String, String> formParams) {
     String paymentId = formParams.getFirst("razorpay_payment_id");
     String razorpaySignature = formParams.getFirst("razorpay_signature");
     String orderId = formParams.getFirst("razorpay_order_id");
@@ -67,13 +67,13 @@ public class PaymentResource {
         boolean isEqual = Utils.verifyPaymentSignature(options, this.secretKey);
 
         if (isEqual) {
-          return new SuccessView(paymentId, orderId);
+          return new SuccessView(paymentId, orderId, "");
         }
       } catch (RazorpayException e) {
         System.out.println("Exception caused because of " + e.getMessage());
-        return Response.status(Status.BAD_REQUEST).build();
+        return new SuccessView("", orderId, e.getMessage());
       }
     }
-    return Response.status(Status.BAD_REQUEST).build();
+    return new SuccessView("", orderId, "Details not available");
   }
 }
