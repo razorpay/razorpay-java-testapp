@@ -1,7 +1,7 @@
 <#-- @ftlvariable name="" type="com.razorpay.PaymentView" -->
 <button id="rzp-button1">Pay with Razorpay</button>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<form action="/payment/charge" method="POST" id="verify">
+<form action="/payment/charge" method="POST" name="razorpayForm">
     <input id="razorpay_payment_id" type="hidden" name="razorpay_payment_id" />
     <input id="razorpay_order_id" type="hidden" name="razorpay_order_id" />
     <input id="razorpay_signature" type="hidden" name="razorpay_signature" />
@@ -35,11 +35,10 @@ var options = {
 options.theme.image_padding = false;
 
 options.handler = function(res) {
-    var form = document.getElementById('verify');
     document.getElementById('razorpay_payment_id').value = res.razorpay_payment_id;
     document.getElementById('razorpay_order_id').value = `${razorpayOrderId}`;
     document.getElementById('razorpay_signature').value = res.razorpay_signature;
-    form.submit();
+    document.razorpayForm.submit();
 }
 
 options.modal = {
