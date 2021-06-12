@@ -71,9 +71,9 @@ public class PaymentResource {
         }
       } catch (RazorpayException e) {
         System.out.println("Exception caused because of " + e.getMessage());
-        return new SuccessView("", orderId, e.getMessage());
+        return new SuccessView(paymentId, orderId, e.getMessage());
       }
     }
-    return new SuccessView("", orderId, "Details not available");
+    return new SuccessView("", "", "Details not available");
   }
 }

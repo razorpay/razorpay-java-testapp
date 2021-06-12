@@ -2,9 +2,9 @@
 <button id="rzp-button1">Pay with Razorpay</button>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <form action="/payment/charge" method="POST" id="verify">
-    <input id="razorpay_payment_id" name="razorpay_payment_id" />
-    <input id="razorpay_order_id" name="razorpay_order_id" />
-    <input id="razorpay_signature" name="razorpay_signature" />
+    <input id="razorpay_payment_id" type="hidden" name="razorpay_payment_id" />
+    <input id="razorpay_order_id" type="hidden" name="razorpay_order_id" />
+    <input id="razorpay_signature" type="hidden" name="razorpay_signature" />
 </form>
 <script>
 // Checkout details as a json

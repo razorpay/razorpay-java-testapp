@@ -12,7 +12,7 @@ public class SuccessView extends View {
     super("/success.ftl");
     this.razorpayPaymentID = razorpayPaymentID;
     this.razorpayOrderId = razorpayOrderId;
-    this.message = getMessage;
+    this.message = message;
   }
 
   public String getRazorpayPaymentID() {

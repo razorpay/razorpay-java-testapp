@@ -1,2 +1,12 @@
 <#-- @ftlvariable name="" type="com.razorpay.SuccesstView" -->
-<h1>Your payment of order ${razorpayOrderId} was successful, paymentId: ${razorpayPaymentID}</h1>
+<#if message != "">
+  <h3>
+    <div>Your payment failed</div>
+    <div>${message}</div>
+  </h3>
+<#else>
+  <h3>
+    <div>Your payment for order_id: ${razorpayOrderId} was successful</div>
+    <div> paymentId: ${razorpayPaymentID}</div>
+  </h3>
+</#if>
