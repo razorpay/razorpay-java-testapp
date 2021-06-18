@@ -15,7 +15,7 @@ var options = {
     "prefill": {
       "name": "Daft Punk",
       "email": "customer@merchant.com",
-      "contact": "9999999999",
+      "contact": "+919999999999",
     },
     "notes": {
       "address": "Hello World",
