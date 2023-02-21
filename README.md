@@ -20,6 +20,10 @@ mvn clean install
 ```
 java -jar target/razorpay-java-testapp-1.0-SNAPSHOT.jar server server.yml
 ```
+- Test integration 
+```
+localhost:8080/payment
+```
 
 # Steps for Integration:
 
