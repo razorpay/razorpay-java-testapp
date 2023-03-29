@@ -18,7 +18,7 @@
     <dependency>
       <groupId>io.dropwizard</groupId>
       <artifactId>dropwizard-views</artifactId>
-      <version>1.0.2</version>
+      <version>4.0.0</version>
     </dependency>
 
     <dependency>
