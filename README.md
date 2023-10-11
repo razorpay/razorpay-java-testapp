@@ -1,4 +1,4 @@
-## Razorapay Test App for Java
+## Razorpay Test App for Java
 
 Sample app for Razorpay Java Integration
 
