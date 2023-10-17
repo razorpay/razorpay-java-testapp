@@ -1,4 +1,4 @@
-## Razorapay Test App for Java
+## Razorpay Test App for Java
 
 Sample app for Razorpay Java Integration
 
@@ -7,7 +7,7 @@ The sample app is made using [Dropwizard Framework](http://www.dropwizard.io/1.0
 # Steps to run sample app:
 
 - Edit the key inside index.ftl
-- Add you api_key and api_secret in server.yml file:
+- Add your api_key and api_secret in server.yml file:
 ```
 apiKey: your_api_key
 secretKey: your_api_secret
