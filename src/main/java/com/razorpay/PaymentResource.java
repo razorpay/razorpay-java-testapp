@@ -31,7 +31,7 @@ public class PaymentResource {
       this.client = new RazorpayClient(this.apiKey, this.secretKey);
     } catch (RazorpayException e) {
       // TODO Auto-generated catch block
-      e.printStackTrace();
+      
     }
     
   }
